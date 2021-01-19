@@ -1,1 +1,18 @@
-<button (click)="onBuy()">Buy</button>
+<h3>{{ product.name }}</h3>
+<p>{{ product.description }}</p>
+<span>Price: {{ product.price | currency}}</span>
+<div [ngSwitch]="product.category">Category:
+  <ng-template ngSwitchCase="0">CPU</ng-template>
+  <ng-template ngSwitchCase="1">External CPU</ng-template>
+  <ng-template ngSwitchCase="2">GPU</ng-template>
+  <ng-template ngSwitchCase="3">RAM</ng-template>
+</div>
+<div *ngIf="product.isAvailable">
+  <p>Available</p>
+</div>
+<div *ngIf="!product.isAvailable">
+  <p>Not available</p>
+</div>
+<div>
+  <button [disabled]="!product.isAvailable" (click)="buyEvent.emit()">BUY</button>
+</div>

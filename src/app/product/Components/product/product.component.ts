@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-product-component',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
-  public onBuy(): void {
-    console.log('You buy!');
-  }
+// Правильно типизировать
+  @Input() product: any;
+  @Output() buyEvent = new EventEmitter();
 }
