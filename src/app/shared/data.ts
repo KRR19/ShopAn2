@@ -15,7 +15,7 @@ export const products: ProductModel[] = [
     description: `Faster time to solution with the CS-1
                   Designed for deep learning, the CS-1 delivers more performance than a cluster of traditional machines, in a single system. This means faster time to solution at far greater power and space efficiency.
                   The CS-1 is powered by the revolutionary Wafer-Scale Engine (WSE), fits directly into standard data center infrastructure and is easily programmable with today’s ML frameworks.`,
-    price: 500000,
+    price: 5000000,
     category: Category.ExternalCPU,
     isAvailable: true
   },
