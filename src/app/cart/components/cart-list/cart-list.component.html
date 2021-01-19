@@ -1,9 +1,9 @@
 <div>
   <h4>Cart:</h4>
-<div *ngIf="cartList.length > 0; else no_items">
+<div *ngIf="cartService.cartList.length > 0; else no_items">
   <ul>
-    <li *ngFor="let product of cartList; trackBy: trackByItems">
-        <span>{{product.name}}  {{product.price | currency}}</span>
+    <li *ngFor="let product of cartService.cartList; trackBy: trackByItems">
+        <span>{{product.title}}; Count: {{product.count}} {{product.price | currency}}</span>
     </li>
   </ul>
 </div>
