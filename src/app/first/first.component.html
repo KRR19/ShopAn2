@@ -1,0 +1,19 @@
+<div>
+  <h3>{{ name }}</h3>
+  <p>{{ description }}</p>
+  <span>Price: {{ price | currency}}</span>
+  <div [ngSwitch]="category">Category:
+    <ng-template ngSwitchCase="0">CPU</ng-template>
+    <ng-template ngSwitchCase="1">External CPU</ng-template>
+    <ng-template ngSwitchCase="2">GPU</ng-template>
+    <ng-template ngSwitchCase="3">RAM</ng-template>
+  </div>
+  <div *ngIf="isAvailable">
+    <p>Available</p>
+  </div>
+  <div *ngIf="!isAvailable">
+    <p>Not available</p>
+  </div>
+</div>
+
+<app-product-component></app-product-component>

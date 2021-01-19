@@ -1,0 +1,12 @@
+<div>
+  <h4>Cart:</h4>
+<div *ngIf="cartList.length > 0; else no_items">
+  <ul>
+    <li *ngFor="let product of cartList; trackBy: trackByItems">
+        <span>{{product.name}}  {{product.price | currency}}</span>
+    </li>
+  </ul>
+</div>
+
+<ng-template #no_items><p>No items in the cart</p></ng-template>
+</div>
