@@ -8,3 +8,4 @@ export interface ProductModel {
   category: Category;
   isAvailable: boolean;
 }
+// обычно, в названии файла используют точку product.model.ts
