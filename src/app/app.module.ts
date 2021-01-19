@@ -7,6 +7,10 @@ import { FirstComponent } from './first/first.component';
 import { ProductComponent } from './product/Components/product/product.component';
 import { ProductListComponent } from './product/Components/product-list/product-list.component';
 import { CartListComponent } from './cart/components/cart-list/cart-list.component';
+import { CartModule } from './cart/cart.module';
+import { ProductModule } from './product/product.module';
+import { SharedModule } from './shared/shared.module';
+import { OrdersModule } from './orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { CartListComponent } from './cart/components/cart-list/cart-list.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CartModule,
+    ProductModule,
+    SharedModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
