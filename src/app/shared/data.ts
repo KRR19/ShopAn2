@@ -1,5 +1,5 @@
 import { Category } from '../product/Models/category.enum';
-import { ProductModel } from '../product/Models/product-model';
+import { ProductModel } from '../product/Models/product.model';
 export const products: ProductModel[] = [
   {
     id: 1,
