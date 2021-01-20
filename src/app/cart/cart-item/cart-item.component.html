@@ -1,1 +1,4 @@
-<span>{{item.title}}; Count: {{item.count}} {{item.price | currency}}<i class="far fa-trash-alt"(click)="deleteItem.emit(item.id)">DEL</i></span>
+<span>
+  {{item.title}}; Count: {{item.count}} {{item.price | currency}}
+  <fa-icon [icon]="faTrashAlt" (click)="deleteItem.emit(item.id)"></fa-icon>
+</span>

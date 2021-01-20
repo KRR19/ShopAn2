@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -16,7 +17,8 @@ import { CartListComponent } from './components/cart-list/cart-list.component';
     CartListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ]
 })
 export class CartModule { }

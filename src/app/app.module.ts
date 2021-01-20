@@ -10,6 +10,7 @@ import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { SharedModule } from './shared/shared.module';
 import { OrdersModule } from './orders/orders.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrdersModule } from './orders/orders.module';
     CartModule,
     ProductModule,
     SharedModule,
-    OrdersModule
+    OrdersModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
