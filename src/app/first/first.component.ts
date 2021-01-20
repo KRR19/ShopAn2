@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { Category } from '../product/Models/category.enum';
 
 @Component({
   selector: 'app-first-component',
   templateUrl: './first.component.html',
-  styleUrls: ['./first.component.scss']
+  styleUrls: ['./first.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FirstComponent {
   name = 'Cerebras';

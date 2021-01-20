@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { ChangeDetectionStrategy, Component} from '@angular/core';
 
 import { CartService } from '../../services/cart.service';
 import { CartModel } from '../../Models/cart.model';
