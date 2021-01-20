@@ -1,4 +1,6 @@
 <span>
-  {{item.title}}; Count: {{item.count}} {{item.price | currency}}
-  <fa-icon [icon]="faTrashAlt" (click)="deleteItem.emit(item.id)"></fa-icon>
+  {{item.title}}
+  <fa-icon [icon]="faMinusSquare" (click)="decrementCount()"></fa-icon>{{item.count}}<fa-icon [icon]="faPlusSquare" (click)="incrementCount()"></fa-icon>
+  {{item.price | currency}}
+  <fa-icon [icon]="faTrashAlt" (click)="deleteItem()"></fa-icon>
 </span>

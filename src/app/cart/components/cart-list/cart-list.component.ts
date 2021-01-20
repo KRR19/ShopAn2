@@ -16,11 +16,16 @@ export class CartListComponent {
     return this.cartService.cartList;
   }
 
-  trackByItems(index: number, item: CartModel): number {
-    return item.id;
+  changeItem(item: CartModel): void {
+    if (item.count > 0){
+      this.cartService.replaceItem(item);
+    }
+    else {
+      this.cartService.deleteItem(item.id);
+    }
   }
 
-  deleteItem(id: number): void {
-    this.cartService.deleteItem(id);
+  trackByItems(index: number, item: CartModel): number {
+    return item.id;
   }
 }

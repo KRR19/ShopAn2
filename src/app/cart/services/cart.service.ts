@@ -37,6 +37,17 @@ export class CartService {
     this.cartListValue = this.cartListValue.filter(item => item.id !== id);
   }
 
+  replaceItem(item: CartModel): void {
+    console.log(item);
+
+    this.cartListValue = this.cartListValue.map(current => {
+      if (current.id === item.id) {
+        return item;
+      }
+      return current;
+    });
+  }
+
   private addNewToCart(item: ProductModel): void {
     const newItem: CartModel = {
       id: item.id,
