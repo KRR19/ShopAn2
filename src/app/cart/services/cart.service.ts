@@ -7,22 +7,22 @@ import { CartModel } from '../Models/cart.model';
   providedIn: 'root'
 })
 export class CartService {
-  private _cartList: CartModel[] = [];
+  private cartListValue: CartModel[] = [];
 
   public get total(): number {
-    return this._cartList.reduce((sum, item) => sum += item.price * item.count, 0);
+    return this.cartListValue.reduce((sum, item) => sum += item.price * item.count, 0);
   }
 
   public get cartList(): CartModel[] {
-    return this._cartList;
+    return this.cartListValue;
   }
 
   addToCart(item: ProductModel): void {
-    let isNew: boolean = true;
+    let isNew = true;
 
-    this._cartList = this._cartList.map((x): CartModel => {
+    this.cartListValue = this.cartListValue.map((x): CartModel => {
       if (x.title === item.name) {
-        x.count++
+        x.count++;
         isNew = false;
       }
       return x;
@@ -35,12 +35,12 @@ export class CartService {
 
   private addNewToCart(item: ProductModel): void {
     const newItem: CartModel = {
-      id: this.cartList.length,
+      id: item.id,
       title: item.name,
       count: 1,
       price: item.price
-    }
+    };
 
-    this._cartList = [...this._cartList, newItem];
+    this.cartListValue = [...this.cartListValue, newItem];
   }
 }

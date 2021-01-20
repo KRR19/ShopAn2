@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 import { CartService } from '../../services/cart.service';
 import { CartModel } from '../../Models/cart.model';
@@ -11,6 +11,10 @@ import { CartModel } from '../../Models/cart.model';
 export class CartListComponent {
 
   constructor(public cartService: CartService) { }
+
+  get products(): CartModel[] {
+    return this.cartService.cartList;
+  }
 
   trackByItems(index: number, item: CartModel): number {
     return item.id;
