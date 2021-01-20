@@ -31,6 +31,10 @@ export class CartService {
     if (isNew) {
       this.addNewToCart(item);
     }
+}
+
+  deleteItem(id: number): void {
+    this.cartListValue = this.cartListValue.filter(item => item.id !== id);
   }
 
   private addNewToCart(item: ProductModel): void {

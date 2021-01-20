@@ -20,4 +20,7 @@ export class CartListComponent {
     return item.id;
   }
 
+  deleteItem(id: number): void {
+    this.cartService.deleteItem(id);
+  }
 }
