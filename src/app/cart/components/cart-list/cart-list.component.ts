@@ -13,7 +13,7 @@ export class CartListComponent {
   constructor(public cartService: CartService) { }
 
   get products(): CartModel[] {
-    return this.cartService.cartList;
+    return this.cartService.getProducts();
   }
 
   changeItem(item: CartModel): void {
@@ -21,7 +21,7 @@ export class CartListComponent {
       this.cartService.replaceItem(item);
     }
     else {
-      this.cartService.deleteItem(item.id);
+      this.cartService.removeProduct(item.id);
     }
   }
 

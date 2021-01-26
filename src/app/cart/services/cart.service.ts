@@ -7,20 +7,24 @@ import { CartModel } from '../Models/cart.model';
   providedIn: 'root'
 })
 export class CartService {
-  private cartListValue: CartModel[] = [];
+  private cartProductsValue: CartModel[] = [];
 
-  public get total(): number {
-    return this.cartListValue.reduce((sum, item) => sum += item.price * item.count, 0);
+  public get totalQuantity(): number {
+    return this.cartProductsValue.length;
   }
 
-  public get cartList(): CartModel[] {
-    return this.cartListValue;
+  public get totalSum(): number {
+    return this.cartProductsValue.reduce((sum, item) => sum += item.price * item.count, 0);
   }
 
-  addToCart(item: ProductModel): void {
+  public getProducts(): CartModel[] {
+    return this.cartProductsValue;
+  }
+
+  public addProduct(item: ProductModel): void {
     let isNew = true;
 
-    this.cartListValue = this.cartListValue.map((x): CartModel => {
+    this.cartProductsValue = this.cartProductsValue.map((x): CartModel => {
       if (x.title === item.name) {
         x.count++;
         isNew = false;
@@ -31,21 +35,29 @@ export class CartService {
     if (isNew) {
       this.addNewToCart(item);
     }
-}
-
-  deleteItem(id: number): void {
-    this.cartListValue = this.cartListValue.filter(item => item.id !== id);
   }
 
-  replaceItem(item: CartModel): void {
+  public removeProduct(id: number): void {
+    this.cartProductsValue = this.cartProductsValue.filter(item => item.id !== id);
+  }
+
+  public replaceItem(item: CartModel): void {
     console.log(item);
 
-    this.cartListValue = this.cartListValue.map(current => {
+    this.cartProductsValue = this.cartProductsValue.map(current => {
       if (current.id === item.id) {
         return item;
       }
       return current;
     });
+  }
+
+  public removeAllProducts(): void {
+    this.cartProductsValue = [];
+  }
+
+  public isEmptyCart(): boolean {
+    return this.totalSum === 0;
   }
 
   private addNewToCart(item: ProductModel): void {
@@ -56,6 +68,6 @@ export class CartService {
       price: item.price
     };
 
-    this.cartListValue = [...this.cartListValue, newItem];
+    this.cartProductsValue = [...this.cartProductsValue, newItem];
   }
 }
