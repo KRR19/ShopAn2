@@ -1,25 +1,23 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
 
+  @Input('appHighlight') color!: string;
   constructor(private el: ElementRef, private renderer: Renderer2)
   {}
 
-  @HostBinding('class')
-  attrClass = 'mouseOver';
-
-  @HostListener('mouseenter', ['$event'])
-  enter(event: Event): void {
-    this.renderer.removeClass(this.el.nativeElement, 'mouseOver');
-    this.renderer.addClass(this.el.nativeElement, 'mouseOn');
+  @HostListener('mouseenter')
+  onMouseEnter(): void {
+    this.highlight(this.color || 'lightgreen');
   }
-
-  @HostListener('mouseleave', ['$event'])
-  leave(event: Event): void {
-    this.renderer.removeClass(this.el.nativeElement, 'mouseOn');
-    this.renderer.addClass(this.el.nativeElement, 'mouseOver');
+  @HostListener('mouseleave')
+  onMouseLeave(): void {
+    this.highlight('');
+  }
+  private highlight(color: string): void {
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
   }
 }
