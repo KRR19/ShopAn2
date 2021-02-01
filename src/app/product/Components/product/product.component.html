@@ -2,10 +2,10 @@
 <p>{{ product.description }}</p>
 <span>Price: {{ product.price | currency}}</span>
 <div [ngSwitch]="product.category">Category:
-  <ng-template ngSwitchCase="0">CPU</ng-template>
-  <ng-template ngSwitchCase="1">External CPU</ng-template>
-  <ng-template ngSwitchCase="2">GPU</ng-template>
-  <ng-template ngSwitchCase="3">RAM</ng-template>
+  <ng-template ngSwitchCase="0">{{'cpu' | uppercase}}</ng-template>
+  <ng-template ngSwitchCase="1">{{'external cpu' | uppercase}}</ng-template>
+  <ng-template ngSwitchCase="2">{{'gpu' | uppercase}}</ng-template>
+  <ng-template ngSwitchCase="3">{{'ram' | uppercase}}</ng-template>
 </div>
 <div *ngIf="product.isAvailable">
   <p>Available</p>
