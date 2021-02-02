@@ -11,7 +11,9 @@ export class ConfigOptionsService {
     return this.configeValue;
   }
 
-  public set confige (value: IConfige) {
+  public set confige(value: IConfige) {
+    // так не получиться задать часть данных, а часть не задавать, а оставить без изменения.
+    // например, первый раз задали все данные, а второй раз хочу изменить только email
     this.configeValue = value;
   }
 }
