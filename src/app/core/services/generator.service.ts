@@ -9,7 +9,7 @@ export class GeneratorService {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < n; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;

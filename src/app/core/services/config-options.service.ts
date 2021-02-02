@@ -11,7 +11,7 @@ export class ConfigOptionsService {
     return this.configeValue;
   }
 
-  public set confige (value: IConfige) {
+  public set confige(value: IConfige) {
     this.configeValue = value;
   }
 }
