@@ -24,8 +24,10 @@ export class CartService {
   public addProduct(item: ProductModel): void {
     let isNew = true;
 
+    // чтобы не перебирать можно попробовать воспользоваться find(), findIndex()
     this.cartProductsValue = this.cartProductsValue.map((x): CartModel => {
       if (x.title === item.name) {
+        // тут мутация
         x.count++;
         isNew = false;
       }
@@ -38,6 +40,7 @@ export class CartService {
   }
 
   public removeProduct(id: number): void {
+    // а тут пересоздание, другой подход.
     this.cartProductsValue = this.cartProductsValue.filter(item => item.id !== id);
   }
 
