@@ -1,3 +1,4 @@
+import { ProductModel } from './../../product/Models/product.model';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrderByPipe implements PipeTransform {
 
-  transform(arr: any[], key: string, isAsc: boolean): any {
+  transform(arr: any, key: string, isAsc: boolean): any {
     const multi = isAsc ? 1 : -1;
     if (!Array.isArray(arr)) {
       return;
