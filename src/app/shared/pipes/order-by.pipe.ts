@@ -6,9 +6,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderByPipe implements PipeTransform {
 
   transform(arr: any[], key: string, isAsc: boolean): any {
-    const orderBy: number = isAsc ? 1 : -1;
-    return arr.sort((current, next) =>
-    (current[key] < next[key] ? -1 : ((current[key] < next[key]) ? 1 : 0)) * orderBy);
+    const multi = isAsc ? 1 : -1;
+    if (!Array.isArray(arr)) {
+      return;
+    }
+    return arr.sort((a: any, b: any) => {
+      if (a[key] < b[key]) {
+        return -1 * multi;
+      } else if (a[key] > b[key]) {
+        return 1 * multi;
+      } else {
+        return 0;
+      }
+    });
   }
 
 }

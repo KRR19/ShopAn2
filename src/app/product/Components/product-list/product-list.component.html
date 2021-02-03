@@ -1,3 +1,12 @@
-<div *ngFor="let product of products$ | async">
+<select [(ngModel)]="sortBy" (change)="state()">
+  <option value="name" selected>Name</option>
+  <option value="description">Description</option>
+  <option value="price">price</option>
+  <option value="category">category</option>
+  <option value="isAvailable">isAvailable</option>
+</select>
+<input type="checkbox" [checked]="isAsc" (change)="isAsc = !isAsc" />
+<label>ASC</label>
+<div *ngFor="let product of products$ | async | orderBy:sortBy:isAsc " >
   <app-product-component [product]="product" (buyEvent)="onBuy(product)"></app-product-component>
 </div>

@@ -14,10 +14,15 @@ import { ProductsService } from '../../services/products.service';
 export class ProductListComponent {
 
   public products$ = this.productsService.getProducts();
+  isAsc = true;
+  sortBy = 'name';
 
   constructor(private productsService: ProductsService,
               private cartService: CartService) { }
   onBuy(product: ProductModel): void {
     this.cartService.addProduct(product);
+  }
+  state(): void{
+    console.log(`Sort By: ${this.sortBy}\nis ASC: ${this.isAsc}`);
   }
 }
