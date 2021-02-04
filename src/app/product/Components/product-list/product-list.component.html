@@ -8,5 +8,5 @@
 <input type="checkbox" [checked]="isAsc" (change)="isAsc = !isAsc" />
 <label>ASC</label>
 <div *ngFor="let product of products$ | async | orderBy:sortBy:isAsc " >
-  <app-product-component [product]="product" (buyEvent)="onBuy(product)"></app-product-component>
+  <div (click)="navigateItem(product.id)"><app-product-component [product]="product" (buyEvent)="onBuy(product)"></app-product-component></div>
 </div>

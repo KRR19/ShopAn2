@@ -7,4 +7,5 @@ export interface ProductModel {
   price: number;
   category: Category;
   isAvailable: boolean;
+  imageUrl: string;
 }

@@ -7,7 +7,8 @@ export const products: ProductModel[] = [
     description: 'Ryzen (/ˈraɪzən/ RY-zən)[6] is a brand[7] of x86-64 microprocessors designed and marketed by Advanced Micro Devices, Inc. (AMD) for desktop, mobile, server, and embedded platforms based on the Zen microarchitecture.',
     category: Category.CPU,
     price: 3000,
-    isAvailable: true
+    isAvailable: true,
+    imageUrl: '../../assets/images/AMD Ryzen Threadripper 3000.png'
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const products: ProductModel[] = [
                   The CS-1 is powered by the revolutionary Wafer-Scale Engine (WSE), fits directly into standard data center infrastructure and is easily programmable with today’s ML frameworks.`,
     price: 5000000,
     category: Category.ExternalCPU,
-    isAvailable: true
+    isAvailable: true,
+    imageUrl: '../../assets/images/Cerebras.jpg'
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ export const products: ProductModel[] = [
     description: `The GeForce 30 series is a family of graphics processing units developed by Nvidia, succeeding the GeForce 20 series. The series was announced on September 1, 2020, and started shipping on September 17, 2020.`,
     price: 3500,
     category: Category.GPU,
-    isAvailable: false
+    isAvailable: false,
+    imageUrl: '../../assets/images/Asus GeForce RTX 3090 TUF OC.jpg'
   },
   {
     id: 4,
@@ -33,5 +36,6 @@ export const products: ProductModel[] = [
     description: `RAM memory`,
     price: 1000,
     category: Category.RAM,
-    isAvailable: true
+    isAvailable: true,
+    imageUrl: '../../assets/images/HP DDR4 DIMM 1x32Gb.jpg'
   }];
