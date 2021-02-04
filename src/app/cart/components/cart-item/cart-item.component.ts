@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { CartModel } from './../Models/cart.model';
+import { CartModel } from '../../Models/cart.model';
 import { faMinusSquare, faPlusSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-cart-item',

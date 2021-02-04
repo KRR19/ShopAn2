@@ -1,3 +1,4 @@
+<div (click)="navigateItem(product.id)">
 <h3>{{ product.name }}</h3>
 <p>{{ product.description }}</p>
 <span>Price: {{ product.price | currency}}</span>
@@ -12,6 +13,7 @@
 </div>
 <div *ngIf="!product.isAvailable">
   <p>Not available</p>
+</div>
 </div>
 <div>
   <button [disabled]="!product.isAvailable" (click)="buyEvent.emit()">BUY</button>

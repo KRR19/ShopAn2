@@ -1,0 +1,13 @@
+<div class="row item">
+  <div class="col-xs-4 col-md-6">
+    {{ item.title }}
+  </div>
+  <div class="col-xs-4 col-md-5 col-md-push-6">
+    <i class="fa fa-minus-circle" aria-hidden="true" (click)="decrementCount()"></i>
+    {{ item.count }}
+    <i class="fa fa-plus-circle"  aria-hidden="true" (click)="incrementCount()"></i>
+  </div>
+  <div class="col-xs-4 col-md-1 col-md-push-6 pull-right">
+    <i (click)="deleteItem()" class=" btn btn-danger fa fa-trash" aria-hidden="true"></i>
+  </div>
+</div>

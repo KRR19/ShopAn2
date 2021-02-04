@@ -18,6 +18,8 @@ export class HighlightDirective {
     this.highlight('');
   }
   private highlight(color: string): void {
+    console.log(this.el.nativeElement);
+
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
   }
 }

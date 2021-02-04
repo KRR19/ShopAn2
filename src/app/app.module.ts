@@ -23,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     CartModule,
     ProductModule,
+    CartModule,
     SharedModule,
     OrdersModule,
     FontAwesomeModule

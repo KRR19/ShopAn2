@@ -1,3 +1,7 @@
+<div class="">
+<a routerLink="/cart"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+</div>
+
 <select [(ngModel)]="sortBy" (change)="state()">
   <option value="name" selected>Name</option>
   <option value="description">Description</option>
@@ -8,5 +12,5 @@
 <input type="checkbox" [checked]="isAsc" (change)="isAsc = !isAsc" />
 <label>ASC</label>
 <div *ngFor="let product of products$ | async | orderBy:sortBy:isAsc " >
-  <div (click)="navigateItem(product.id)"><app-product-component [product]="product" (buyEvent)="onBuy(product)"></app-product-component></div>
+  <app-product-component [product]="product" (buyEvent)="onBuy(product)"></app-product-component>
 </div>
