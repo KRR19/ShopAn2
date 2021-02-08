@@ -9,6 +9,7 @@ import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductModule,
     CartModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
