@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ProcessOrderGuard } from './orders/services/process-order.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

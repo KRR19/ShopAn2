@@ -4,13 +4,15 @@ import { CONSTANTS } from './services/constant.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { generatedString, GeneratorFactory } from './services/generator.factory';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     { provide: CONSTANTS, useValue: CONSTANTS },

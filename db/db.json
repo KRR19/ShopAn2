@@ -6,12 +6,31 @@
       "author": "typicode"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+  "cart": [
+    [
+      {
+        "id": 1,
+        "title": "AMD Ryzen Threadripper 3000",
+        "count": 1,
+        "price": 3000
+      }
+    ],
+    [
+      {
+        "id": 2,
+        "title": "Cerebras",
+        "count": 1,
+        "price": 5000000
+      }
+    ],
+    [
+      {
+        "id": 2,
+        "title": "Cerebras",
+        "count": 1,
+        "price": 5000000
+      }
+    ]
   ],
   "profile": {
     "name": "typicode"

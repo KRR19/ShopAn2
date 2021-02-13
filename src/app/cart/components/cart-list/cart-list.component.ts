@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { CartService } from '../../services/cart.service';
 import { CartModel } from '../../Models/cart.model';
@@ -6,18 +6,19 @@ import { CartModel } from '../../Models/cart.model';
 @Component({
   selector: 'app-cart-list-component',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.scss']
+  styleUrls: ['./cart-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CartListComponent {
+export class CartListComponent implements OnInit {
 
+  products: CartModel[] = [];
   constructor(public cartService: CartService) { }
-
-  get products(): CartModel[] {
-    return this.cartService.getProducts();
+  ngOnInit(): void {
+    this.products = this.cartService.getProducts();
   }
 
   changeItem(item: CartModel): void {
-    if (item.count > 0){
+    if (item.count > 0) {
       this.cartService.replaceItem(item);
     }
     else {

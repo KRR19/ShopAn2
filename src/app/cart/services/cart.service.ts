@@ -1,14 +1,28 @@
+import { CartModule } from './../cart.module';
+import { CartModel } from './../Models/cart.model';
+import { HttpClientService } from './../../core/services/http-client.service';
 import { Injectable } from '@angular/core';
 
 import { ProductModel } from '../../product/Models/product.model';
-import { CartModel } from '../Models/cart.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class CartService {
-  private cartProductsValue: CartModel[] = [];
+  // private cartProductsValue: CartModel[] = [];
 
+  constructor(private httpService: HttpClientService) {
+
+  }
+
+  public get cartProductsValue(): CartModel[] {
+    let result: CartModel[] = [];
+    this.httpService.getCard().subscribe(cart => result = cart);
+    return result;
+  }
+  public set cartProductsValue(item: CartModel[]) {
+    this.httpService.setCart(item);
+  }
   public get totalQuantity(): number {
     return this.cartProductsValue.length;
   }
@@ -24,7 +38,7 @@ export class CartService {
   public addProduct(item: ProductModel): void {
     let isNew = true;
 
-    this.cartProductsValue = this.cartProductsValue.map((x): CartModel => {
+    const cart = this.cartProductsValue.map((x): CartModel => {
       if (x.title === item.name) {
         x.count++;
         isNew = false;
@@ -34,6 +48,9 @@ export class CartService {
 
     if (isNew) {
       this.addNewToCart(item);
+    }
+    else {
+      this.cartProductsValue = cart;
     }
   }
 
