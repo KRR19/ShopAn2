@@ -1,4 +1,5 @@
-import { HttpClientModule } from '@angular/common/http';
+import { TimingInterceptor } from './core/interceptors/timing.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProcessOrderGuard } from './orders/services/process-order.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,13 @@ import { AdminModule } from './admin/admin.module';
     FontAwesomeModule,
     AdminModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TimingInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
